@@ -1,6 +1,7 @@
-from sqlalchemy import Column, Integer, String, Text
-from database import Base
 from pydantic import BaseModel
+from sqlalchemy import Column, Integer, String, Text
+
+from database import Base
 
 
 class Recipe(Base):
@@ -16,11 +17,13 @@ class Recipe(Base):
     def __repr__(self):
         return f"<Recipe(title={self.title}, views={self.views}, cooking_time={self.cooking_time})>"
 
+
 class RecipeCreate(BaseModel):
     title: str
     cooking_time: int
     ingredients: str
     description: str
+
 
 class RecipeResponse(RecipeCreate):
     id: int
