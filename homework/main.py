@@ -27,7 +27,8 @@ def read_recipes(skip: int = 0, limit: int = 10, db: Session = Depends(get_db)):
 
     Рецепты сортируются по количеству просмотров и времени приготовления.
     """
-    return db.query(Recipe).order_by(Recipe.views.desc(), Recipe.cooking_time).offset(skip).limit(limit).all()
+    return db.query(Recipe).order_by(Recipe.views.desc(),
+                                     Recipe.cooking_time).offset(skip).limit(limit).all()
 
 
 @app.get("/recipes/{recipe_id}", response_model=RecipeResponse)
