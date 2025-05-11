@@ -8,7 +8,9 @@ from homework.database import engine
 from homework.main import app
 from homework.models import Base
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
+sys.path.insert(
+    0, os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+)
 
 client = TestClient(app)
 
