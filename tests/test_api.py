@@ -3,6 +3,7 @@ import sys
 
 import pytest
 from fastapi.testclient import TestClient
+
 from homework.database import engine
 from homework.main import app
 from homework.models import Base
